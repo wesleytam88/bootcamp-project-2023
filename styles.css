@@ -1,0 +1,356 @@
+:root {
+  /* variables */
+  --cg-black: rgb(30, 32, 32);
+  --cg-blue: rgb(59, 179, 242);
+  --cg-grey: rgb(110, 126, 140); /* text color */
+  --cg-light-grey: rgb(119, 156, 192); /* highlight text color */
+  --cg-white: rgb(255, 255, 255);
+  --cg-dark-gunmetal: rgb(11, 22, 34); /* page background color */
+  --cg-light-gunmetal: rgb(21, 31, 46);
+  --cg-blue-gunmetal: rgb(21, 34, 50);
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--cg-dark-gunmetal);
+  position: relative;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-family: monospace;
+}
+
+/* CSS for navigation */
+
+.navbar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 7%;
+  z-index: 10;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  background-color: var(--cg-blue-gunmetal);
+  color: var(--cg-white);
+  padding: 0px 0px;
+
+  /* Debug border */
+  /* border: solid red; */
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  right: 30px;
+  list-style: none;
+
+  /* Debug border */
+  /* border: solid blue; */
+}
+
+.navbar a {
+  color: var(--cg-grey);
+  font-weight: bold;
+  font-size: 24px;
+  margin: 0 20px;
+  text-decoration: none;
+  letter-spacing: 2px;
+
+  font-family: monospace;
+}
+
+.navbar a:hover {
+  color: var(--cg-light-grey);
+}
+
+.navbar a:active {
+  color: var(--cg-light-grey);
+}
+
+.logo a {
+  font-family: Georgia;
+  font-size: 24px;
+}
+
+.logo a:hover {
+  text-decoration: None;
+}
+
+main {
+  padding: 0 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-family: Georgia;
+  color: var(--cg-grey);
+}
+
+/* CSS for portfolio grid */
+
+.project {
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  margin: 1em 0 2em 0;
+  justify-content: center;
+
+  /* Debug border */
+  /* border: 2px solid blue; */
+}
+
+.item-link {
+  width: 70%;
+
+  /* Debug border */
+  /* border: 2px solid red; */
+}
+
+.project-image {
+  object-fit: cover;
+  width: 100%;
+  height: 491px;
+  flex-basis: 50px;
+  flex-grow: 2;
+  border: 5px solid var(--cg-light-gunmetal);
+
+  /* Debug border */
+  /* border: 2px solid black; */
+}
+
+.project-details {
+  display: flex;
+  background-color: var(--cg-light-gunmetal);
+  width: 30%;
+  height: 500px;
+  flex-shrink: 1;
+  padding: 0 20px;
+  margin: 0px;
+  line-height: 1.5;
+  font-size: 20px;
+  /* overflow: scroll; */
+
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  /* Debug border */
+  /* border: 2px solid green; */
+}
+
+.project-details a {
+  color: var(--cg-grey);
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.project-details a:hover {
+  color: var(--cg-light-grey);
+  text-decoration: underline;
+}
+
+.project-details {
+  font-weight: lighter;
+  color: var(--cg-grey);
+}
+
+.project-name {
+  font-weight: bold;
+  font-size: 32px;
+  text-decoration: underline;
+}
+
+/* CSS for home page */
+
+.about {
+  display: flex;
+  align-items: top;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--cg-light-gunmetal);
+  /* border: 1px solid #ccc; */
+  /* border-radius: 5px; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.about-image img {
+  /* max-width: 300px; */
+  border-radius: 3px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+}
+
+.about-text {
+  color: var(--cg-grey);
+  flex: 1;
+  margin-left: 20px;
+}
+
+.about-text h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+/* CSS for resume page */
+
+.button {
+  background-color: var(--cg-black);
+  border: none;
+  color: var(--cg-white);
+
+  font-family: monospace;
+
+  padding: 5px 7px;
+  text-align: center;
+
+  border-radius: 2px;
+}
+
+.button:hover {
+  background-color: var(--cg-light-grey);
+}
+
+.resume-download {
+  color: var(--cg-light-grey);
+}
+
+.resume-download a {
+  color: var(--cg-grey);
+  text-decoration: underline;
+  font-family: Georgia;
+}
+
+.resume-download a:hover {
+  color: var(--cg-light-grey);
+  text-decoration: underline;
+  font-family: Georgia;
+}
+
+.resume {
+  color: var(--cg-grey);
+  font-family: Georgia;
+}
+
+.resume h2 {
+  font-size: 36px;
+}
+
+.resume h3 {
+  font-size: 24px;
+  text-indent: 50px;
+}
+
+.resume p {
+  text-indent: 50px;
+}
+
+.resume ul {
+  margin-left: 75px;
+}
+
+/* CSS for contact form */
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: Georgia;
+  font-weight: bold;
+  color: var(--cg-grey);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  /* border: 1px solid #ccc;*/
+  border: 1px solid var(--cg-grey);
+  border-radius: 4px;
+  font-size: 16px;
+  resize: none;
+}
+
+/* Add some spacing to the form */
+form {
+  width: 500px;
+  margin: 0 auto;
+}
+
+/* CSS for blog page */
+
+.blog-entry {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+  justify-content: center;
+  background-color: var(--cg-light-gunmetal);
+  padding: 1%;
+
+  /* Debug border */
+  /* border: 2px solid blue; */
+}
+
+.blog-entry-details {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--cg-blue-gunmetal);
+  padding-inline: 1%;
+  justify-content: space-between;
+}
+
+.blog-title {
+  color: var(--cg-grey);
+  font-size: 32px;
+}
+
+.blog-entry-date {
+  color: var(--cg-grey);
+  font-size: 32px;
+  text-align: end;
+}
+
+.blog-text {
+  color: var(--cg-grey);
+  font-size: 24px;
+}
+
+.blog a:hover,
+a:active,
+a:visited {
+  color: var(--cg-light-grey);
+}
+
+/* CSS for footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--cg-blue-gunmetal);
+  color: var(--cg-grey);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}

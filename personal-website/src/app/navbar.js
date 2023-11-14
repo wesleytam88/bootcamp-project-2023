@@ -8,10 +8,10 @@ export default function Navbar() {
       </h1>
       <div className="navbar-links">
         <Link href={"/"}>Wesley Tam</Link>
-        <Link href={"blog"}>Blog</Link>
-        <Link href={"portfolio"}>Portfolio</Link>
-        <Link href={"resume"}>Resume</Link>
-        <Link href={"contact"}>Contact</Link>
+        <Link href={"/blog"}>Blog</Link>
+        <Link href={"/portfolio"}>Portfolio</Link>
+        <Link href={"/resume"}>Resume</Link>
+        <Link href={"/contact"}>Contact</Link>
       </div>
     </nav>
   );

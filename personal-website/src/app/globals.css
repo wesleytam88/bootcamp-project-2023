@@ -322,6 +322,9 @@ form {
 .blog-title {
   color: var(--cg-grey);
   font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .blog-date {
@@ -338,7 +341,7 @@ form {
 .blog a:hover,
 a:active,
 a:visited {
-  color: var(--cg-light-grey);
+  color: var(--cg-grey);
 }
 
 /* CSS for footer */

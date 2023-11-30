@@ -1,6 +1,6 @@
 import Project from "../../components/project";
 import Navbar from "../../components/navbar";
-import Footer from "../footer";
+import Footer from "../../components/footer";
 
 export default function PortfolioPage() {
   type Project = {

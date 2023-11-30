@@ -1,11 +1,11 @@
 import Image from "next/image";
-import Navbar from "./navbar";
+import Navbar from "../components/navbar";
 import Footer from "./footer";
 
 export default function HomePage() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <main>
         <h1 className="page-title">Wesley Tam</h1>
         <div className="about">
@@ -31,7 +31,7 @@ export default function HomePage() {
           </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

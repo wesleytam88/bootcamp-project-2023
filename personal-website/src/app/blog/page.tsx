@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Navbar from "../navbar";
+import Blog from "../../components/blog";
+import Navbar from "../../components/navbar";
 import Footer from "../footer";
 
 export default function BlogPage() {
@@ -33,15 +33,12 @@ export default function BlogPage() {
         <h1 className="page-title">Blog</h1>
         <div className="blog-component">
           {blogs.map((blog) => (
-            <article className="blog-entry">
-              <div className="blog-entry-details">
-                <Link href={blog.slug} className="blog-title">
-                  {blog.title}
-                </Link>
-                <h2 className="blog-date">{blog.date}</h2>
-              </div>
-              <p className="blog-description">{blog.description}</p>
-            </article>
+            <Blog
+              title={blog.title}
+              date={blog.date}
+              description={blog.description}
+              slug={blog.slug}
+            ></Blog>
           ))}
         </div>
       </main>

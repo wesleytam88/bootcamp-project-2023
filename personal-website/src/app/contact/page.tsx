@@ -1,10 +1,10 @@
-import Navbar from "../navbar";
+import Navbar from "../../components/navbar";
 import Footer from "../footer";
 
 export default function ContactPage() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <main>
         <h1 className="page-title">Contact</h1>
         <form id="contact-form">
@@ -20,7 +20,7 @@ export default function ContactPage() {
           <input type="submit"></input>
         </form>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

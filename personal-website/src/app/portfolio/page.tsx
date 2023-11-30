@@ -1,6 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-import Navbar from "../navbar";
+import Project from "../../components/project";
+import Navbar from "../../components/navbar";
 import Footer from "../footer";
 
 export default function PortfolioPage() {
@@ -30,24 +29,13 @@ export default function PortfolioPage() {
         <h1 className="page-title">Portfolio</h1>
 
         {projects.map((project) => (
-          <div className="project">
-            <Link href={project.link}>
-              <Image
-                className="project-image"
-                src={project.image}
-                alt={project.image_alt}
-                width={500}
-                height={491}
-              ></Image>
-            </Link>
-            <div className="project-details">
-              <p className="project-name">
-                <strong>{project.name}</strong>
-              </p>
-              <p className="project-description">{project.description}</p>
-              <Link href={project.link}>LEARN MORE</Link>
-            </div>
-          </div>
+          <Project
+            name={project.name}
+            description={project.description}
+            image={project.image}
+            image_alt={project.image_alt}
+            link={project.link}
+          ></Project>
         ))}
       </main>
       <Footer />

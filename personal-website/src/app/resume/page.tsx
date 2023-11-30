@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Navbar from "../navbar";
+import Navbar from "../../components/navbar";
 import Footer from "../footer";
 
 export default function ResumePage() {
   return (
     <>
-      <Navbar/>
+      <Navbar />
       <main>
         <h1 className="page-title">Resume</h1>
         <h2 className="resume-download">
@@ -185,7 +185,7 @@ export default function ResumePage() {
           </section>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

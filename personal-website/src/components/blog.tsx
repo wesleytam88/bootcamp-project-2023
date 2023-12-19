@@ -7,16 +7,23 @@ type BlogProps = {
   slug: string;
 };
 
-const Blog: React.FC<BlogProps> = ({ title, date, description, slug }) => (
-  <article className="blog-entry">
-    <div className="blog-entry-details">
-      <Link href={slug} className="blog-title">
-        {title}
-      </Link>
-      <h2 className="blog-date">{date}</h2>
-    </div>
-    <p className="blog-description">{description}</p>
-  </article>
+const BlogComponent: React.FC<BlogProps> = ({
+  title,
+  date,
+  description,
+  slug,
+}) => (
+  <a href={slug}>
+    <article className="blog-entry">
+      <div className="blog-entry-details">
+        <h2 className="blog-title">
+          {title}
+        </h2>
+        <h2 className="blog-date">{date}</h2>
+      </div>
+      <p className="blog-description">{description}</p>
+    </article>
+  </a>
 );
 
-export default Blog;
+export default BlogComponent;

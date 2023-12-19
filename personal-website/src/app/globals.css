@@ -302,7 +302,7 @@ form {
 .blog-component {
   display: flex;
   flex-direction: column;
-  max-width: 75%;
+  width: 75%;
   justify-content: center;
   background-color: var(--cg-light-gunmetal);
   padding: 1%;
@@ -311,10 +311,13 @@ form {
   /* border: 2px solid blue; */
 }
 
+.blog-entry {
+  background-color: var(--cg-blue-gunmetal);
+}
+
 .blog-entry-details {
   display: flex;
   flex-direction: row;
-  background-color: var(--cg-blue-gunmetal);
   padding-inline: 1%;
   justify-content: space-between;
 }
@@ -329,19 +332,23 @@ form {
 
 .blog-date {
   color: var(--cg-grey);
-  font-size: 32px;
+  font-size: 24px;
   text-align: end;
 }
 
 .blog-description {
   color: var(--cg-grey);
   font-size: 24px;
+  padding-bottom: 1%;
+  padding-inline: 1%;
 }
 
 .blog a:hover,
 a:active,
-a:visited {
+a:visited,
+a:link {
   color: var(--cg-grey);
+  text-decoration: none;
 }
 
 /* CSS for footer */

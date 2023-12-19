@@ -1,30 +1,22 @@
-import Blog from "../../components/blog";
+import connectDB from "@/helpers/db";
+import Blog from "@/database/blogSchema";
+import BlogComponent from "@/components/blog";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 
 export default function BlogPage() {
-  type Blog = {
-    title: string;
-    date: string;
-    description: string;
-    slug: string;
-  };
+  async function getBlogs() {
+    await connectDB();
 
-  const blogs: Blog[] = [
-    {
-      title: "Happy Halloween",
-      date: "Oct. 23 2023",
-      description: "A little early, but Happy Halloween!",
-      slug: "/blog/Happy_Halloween",
-    },
-    {
-      title: "First Blog",
-      date: "Oct. 23 2023",
-      description:
-        "First blog entry! Super excited to have finished my own personal website, huge thanks to Cal Poly's Hack4Impact Starter Pack for helping me make this wesbite. Hopefully this website will be a living document and will receive new updates in the future!",
-      slug: "/blog/First_Blog",
-    },
-  ];
+    try {
+      // query for all blogs and sort by date
+      const blogs = await Blog.find().sort({ date: -1 }).orFail();
+      // send a response as the blogs as the message
+      return blogs;
+    } catch (err) {
+      return null;
+    }
+  }
 
   return (
     <>
@@ -32,14 +24,18 @@ export default function BlogPage() {
       <main>
         <h1 className="page-title">Blog</h1>
         <div className="blog-component">
-          {blogs.map((blog) => (
-            <Blog
-              title={blog.title}
-              date={blog.date}
-              description={blog.description}
-              slug={blog.slug}
-            ></Blog>
-          ))}
+          {getBlogs().then(
+            (blogs) =>
+              blogs &&
+              blogs.map((blog) => (
+                <BlogComponent
+                  title={blog.title}
+                  date={blog.date.toUTCString()}
+                  description={blog.description}
+                  slug={blog.slug}
+                ></BlogComponent>
+              ))
+          )}
         </div>
       </main>
       <Footer />

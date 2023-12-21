@@ -9,7 +9,7 @@ type ProjectProps = {
   link: string;
 };
 
-const Project: React.FC<ProjectProps> = ({
+const ProjectComponent: React.FC<ProjectProps> = ({
   name,
   description,
   image,
@@ -36,4 +36,4 @@ const Project: React.FC<ProjectProps> = ({
   </div>
 );
 
-export default Project;
+export default ProjectComponent;

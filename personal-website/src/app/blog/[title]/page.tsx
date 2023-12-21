@@ -8,7 +8,7 @@ type Props = {
 };
 
 async function getBlog(title: string) {
-  const res = await fetch("http://localhost:3000/api/db/blogs/" + title);
+  const res = await fetch("http://localhost:3000/api/db/blog/" + title);
   if (res.ok) {
     return res.json();
   }

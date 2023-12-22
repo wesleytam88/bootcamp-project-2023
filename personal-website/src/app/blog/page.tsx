@@ -1,6 +1,7 @@
 import connectDB from "@/helpers/db";
 import Blog from "@/database/blogSchema";
 import BlogComponent from "@/components/blog";
+import parseTime from "@/helpers/parseTime";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 
@@ -30,7 +31,7 @@ export default function BlogPage() {
               blogs.map((blog) => (
                 <BlogComponent
                   title={blog.title}
-                  date={blog.date.toUTCString()}
+                  date={parseTime(new Date(blog.date))}
                   description={blog.description}
                   slug={blog.slug}
                 ></BlogComponent>

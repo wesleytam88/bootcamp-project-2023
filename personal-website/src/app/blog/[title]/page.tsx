@@ -1,5 +1,6 @@
 import Comment from "@/components/comment";
 import { IComment } from "@/database/blogSchema";
+import parseTime from "@/helpers/parseTime";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -31,7 +32,7 @@ export default async function Page({ params: { title } }: Props) {
             <article className="blog-entry">
               <div className="blog-entry-details">
                 <h1 className="blog-title">{blog.title.replace("_", " ")}</h1>
-                <h2 className="blog-date">{blog.date}</h2>
+                <h2 className="blog-date">{parseTime(new Date(blog.date))}</h2>
               </div>
               <p className="blog-description">{blog.content}</p>
             </article>

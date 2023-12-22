@@ -48,8 +48,8 @@ export default async function Page({ params: { title } }: Props) {
     );
   } else {
     return (
-      <div>
-        <h1>Blog not found</h1>
+      <div className="blog-not-found">
+        <h1 className="blog-not-found-text">Blog not found</h1>
       </div>
     );
   }

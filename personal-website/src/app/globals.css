@@ -351,6 +351,10 @@ a:link {
   text-decoration: none;
 }
 
+.blog-not-found-text {
+  color: var(--cg-grey);
+}
+
 .comment {
   margin-bottom: 25px;
   padding-left: 5%;
@@ -358,9 +362,9 @@ a:link {
 }
 
 .blog-comment {
-    margin-top: 25px;
-    background-color: var(--cg-blue-gunmetal);
-    padding: 1%;
+  margin-top: 25px;
+  background-color: var(--cg-blue-gunmetal);
+  padding: 1%;
 }
 
 .comment-user,

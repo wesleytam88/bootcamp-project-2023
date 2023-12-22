@@ -351,6 +351,25 @@ a:link {
   text-decoration: none;
 }
 
+.comment {
+  margin-bottom: 25px;
+  padding-left: 5%;
+  width: 95%;
+}
+
+.blog-comment {
+    margin-top: 25px;
+    background-color: var(--cg-blue-gunmetal);
+    padding: 1%;
+}
+
+.comment-user,
+.comment-text,
+.comment-date {
+  color: var(--cg-grey);
+  font-size: 18px;
+}
+
 /* CSS for footer */
 
 .footer {

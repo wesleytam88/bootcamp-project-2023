@@ -11,9 +11,10 @@ type IBlog = {
   comments: IComment[];
 };
 
-type IComment = {
-  date: Date;
-  content: string;
+export type IComment = {
+  user: String;
+  comment: string;
+  time: Date;
 };
 
 // mongoose schema

@@ -11,7 +11,7 @@ type Props = {
 };
 
 async function getBlog(title: string) {
-  const res = await fetch("http://localhost:3000/api/db/blog/" + title, {
+  const res = await fetch("/api/db/blog/" + title, {
     cache: "no-store",
   });
   if (res.ok) {

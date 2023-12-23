@@ -34,8 +34,9 @@ export default async function PortfolioPage() {
         <h1 className="page-title">Portfolio</h1>
 
         {projects &&
-          projects.map((project) => (
+          projects.map((project, index) => (
             <ProjectComponent
+              key={index}
               name={project.name}
               description={project.description}
               image={project.image}

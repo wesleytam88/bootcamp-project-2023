@@ -27,8 +27,9 @@ export default async function BlogPage() {
         <h1 className="page-title">Blog</h1>
         <div className="blog-component">
           {blogs &&
-            blogs.map((blog) => (
+            blogs.map((blog, index) => (
               <BlogComponent
+                key={index}
                 title={blog.title}
                 date={parseTime(new Date(blog.date))}
                 description={blog.description}

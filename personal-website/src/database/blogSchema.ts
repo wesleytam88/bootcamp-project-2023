@@ -24,6 +24,11 @@ const blogSchema = new Schema<IBlog>({
   description: { type: String, required: true },
   content: { type: String, required: true },
   slug: { type: String, required: true },
+  comments: [{
+    user: { type: String, required: true },
+    comment: { type: String, required: true },
+    time: { type: Date, required: false, default: new Date() },
+  }],
 });
 
 // defining the collection and model

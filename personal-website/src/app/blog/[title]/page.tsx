@@ -1,5 +1,6 @@
 import Comment from "@/components/comment";
 import { IComment } from "@/database/blogSchema";
+import AddCommentComponent from "@/components/createComment";
 import parseTime from "@/helpers/parseTime";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -10,8 +11,8 @@ type Props = {
   };
 };
 
-async function getBlog(title: string) {
-  const res = await fetch("http://localhost:3000/api/db/blog/" + title, {
+async function getBlog(url: string) {
+  const res = await fetch(url, {
     cache: "no-store",
   });
   if (res.ok) {
@@ -21,7 +22,8 @@ async function getBlog(title: string) {
 }
 
 export default async function Page({ params: { title } }: Props) {
-  const blog = await getBlog(title);
+  const url = `http://localhost:3000/api/db/blog/${title}`;
+  const blog = await getBlog(url);
 
   if (blog) {
     return (
@@ -36,6 +38,7 @@ export default async function Page({ params: { title } }: Props) {
               </div>
               <p className="blog-description">{blog.content}</p>
             </article>
+            <AddCommentComponent slug={url} type="blog"></AddCommentComponent>
             <div className="comment">
               {blog.comments.map((comment: IComment, index: number) => (
                 <Comment key={index} comment={comment} />

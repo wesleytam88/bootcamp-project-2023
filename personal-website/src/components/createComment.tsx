@@ -38,7 +38,7 @@ export default function AddCommentComponent({ slug, type }: AddCommentProps) {
 
   return (
     <div className="createComment">
-      <h2>Add Comment</h2>
+      <h2 className="createCommentTitle">Add Comment</h2>
       <form onSubmit={updateDB}>
         <label>Name:</label>
         <input

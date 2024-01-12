@@ -38,7 +38,7 @@ export default async function Page({ params: { title } }: Props) {
               </div>
               <p className="blog-description">{blog.content}</p>
             </article>
-            <AddCommentComponent slug={url} type="blog"></AddCommentComponent>
+            <AddCommentComponent slug={title} type="blog"></AddCommentComponent>
             <div className="comment">
               {blog.comments.map((comment: IComment, index: number) => (
                 <Comment key={index} comment={comment} />

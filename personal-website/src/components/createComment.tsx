@@ -34,6 +34,9 @@ export default function AddCommentComponent({ slug, type }: AddCommentProps) {
     } catch (err) {
       return NextResponse.json("Error when uploading comment", { status: 400 });
     }
+
+    // Refresh page after uploading comment
+    location.reload()
   }
 
   return (

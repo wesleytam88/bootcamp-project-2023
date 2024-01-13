@@ -355,6 +355,11 @@ a:link {
   color: var(--cg-grey);
 }
 
+.createCommentTitle {
+  color: var(--cg-grey);
+  text-align: center;
+}
+
 .comment {
   margin-bottom: 25px;
   padding-left: 5%;

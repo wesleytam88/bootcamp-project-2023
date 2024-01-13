@@ -5,14 +5,6 @@ import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 
 export default function PortfolioPage() {
-  type Project = {
-    name: string;
-    description: string;
-    image: string;
-    image_alt: string;
-    link: string;
-  };
-
   async function getProjects() {
     await connectDB();
 

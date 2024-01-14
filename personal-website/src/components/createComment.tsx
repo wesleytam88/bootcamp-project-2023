@@ -21,8 +21,9 @@ export default function AddCommentComponent({ slug, type }: AddCommentProps) {
     event.preventDefault();
 
     try {
+      const api = process.env.MONGO_URI;
       const res = await fetch(
-        `http://localhost:3000/api/db/${type}/${slug}/comment`,
+        `${api}/api/db/${type}/${slug}/comment`,
         {
           method: "POST",
           body: JSON.stringify({

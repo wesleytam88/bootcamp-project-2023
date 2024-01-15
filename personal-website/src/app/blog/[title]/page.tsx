@@ -22,8 +22,8 @@ async function getBlog(url: string) {
 }
 
 export default async function Page({ params: { title } }: Props) {
-  const api = process.env.MONGO_URI;
-  const url = `${api}/api/db/blog/${title}`;
+  const baseURL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+  const url = `${baseURL}/api/db/blog/${title}`;
   const blog = await getBlog(url);
 
   if (blog) {

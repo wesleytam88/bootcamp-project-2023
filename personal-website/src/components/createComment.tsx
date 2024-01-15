@@ -21,22 +21,20 @@ export default function AddCommentComponent({ slug, type }: AddCommentProps) {
     event.preventDefault();
 
     try {
-      const api = process.env.MONGO_URI;
-      const res = await fetch(
-        `${api}/api/db/${type}/${slug}/comment`,
-        {
-          method: "POST",
-          body: JSON.stringify({
-            user: username,
-            comment: comment,
-          }),
-        }
-      );
+      const baseURL =
+        process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+      const res = await fetch(`${baseURL}/api/db/${type}/${slug}/comment`, {
+        method: "POST",
+        body: JSON.stringify({
+          user: username,
+          comment: comment,
+        }),
+      });
     } catch (err) {
       return NextResponse.json("Error when uploading comment", { status: 400 });
     }
 
-    location.reload()
+    location.reload();
   }
 
   return (
